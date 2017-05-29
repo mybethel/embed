@@ -1,0 +1,26 @@
+#embedded.vjs-bethel-skin {
+  background-image:url(${ podcast.image }&blur=150);
+  ${media.type.split('/')[0] === 'video' && 'background: #000;'}
+  ${podcast.embedSettings && podcast.embedSettings.backgroundColor && `background: ${podcast.embedSettings.backgroundColor};`}
+}
+
+${podcast.embedSettings && podcast.embedSettings.textColor && `
+.meta,.meta small,.extras a {
+  color: ${podcast.embedSettings.textColor};
+}
+`}
+
+${podcast.embedSettings && podcast.embedSettings.controlColor && `
+.video-js.vjs-bethel-skin {
+  color: ${podcast.embedSettings.controlColor };
+}
+.video-js.vjs-bethel-skin .vjs-progress-control .vjs-play-progress,.video-js.vjs-bethel-skin .vjs-volume-level,.video-js.vjs-bethel-skin .vjs-mouse-display,.video-js.vjs-bethel-skin .vjs-mouse-display:after {
+  background: ${podcast.embedSettings.controlColor};
+}
+`}
+
+${podcast.embedSettings && podcast.embedSettings.sliderColor && `
+.video-js.vjs-bethel-skin .vjs-progress-control .vjs-progress-holder {
+  background: ${podcast.embedSettings.sliderColor};
+}
+`}
