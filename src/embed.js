@@ -12,7 +12,7 @@ var DownloadButton = videojs.extend(VJSButton, {
     this.addClass('vjs-download-button');
   },
   handleClick: function() {
-    window.location.href = 'http://my.bethel.io/podcastmedia/download/' + this.uuid;
+    window.location.href = 'https://my.bethel.io/podcastmedia/download/' + this.uuid;
   }
 });
 

@@ -10,7 +10,7 @@
 <body>
   <${ media.type.split('/')[0] } id="embedded" class="video-js vjs-bethel-skin" uuid="${ media._id }" controls poster="${ media.thumbnail || podcast.image }" preload="none">
     ${ !media.variants ? `
-      <source src="${ media.url }" type="${ media.type }" />
+      <source src="${ media.url.replace('http://', 'https://') }" type="${ media.type }" />
     ` : `
       ${ media.variants.hls ? `<source src="${ media.variants.hls }" type="application/x-mpegURL" />` : '' }
       <source src="${ media.variants.sd }" type="video/mp4" />
