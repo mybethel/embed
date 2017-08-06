@@ -8,17 +8,17 @@
   </style>
 </head>
 <body>
-  <${ media.type.split('/')[0] } id="embedded" class="video-js vjs-bethel-skin" uuid="${ media._id }" controls poster="${ media.thumbnail || podcast.image }" preload="none">
+  <${ media.mime.split('/')[0] } id="embedded" class="video-js vjs-bethel-skin" uuid="${ media._id }" controls poster="${ media.thumbnail || podcast.image }" preload="none">
     ${ !media.variants ? `
-      <source src="${ media.url.replace('http://', 'https://') }" type="${ media.type }" />
+      <source src="${ media.url.replace('http://', 'https://') }" type="${ media.mime }" />
     ` : `
       ${ media.variants.hls ? `<source src="${ media.variants.hls }" type="application/x-mpegURL" />` : '' }
       <source src="${ media.variants.sd }" type="video/mp4" />
     ` }
     <p class="vjs-no-js">Please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-  </${ media.type.split('/')[0] }>
+  </${ media.mime.split('/')[0] }>
 
-  ${ media.type.split('/')[0] === 'audio' ? `<div class="meta">
+  ${ media.mime.split('/')[0] === 'audio' ? `<div class="meta">
     <h1>${ media.name }</h1>
     <h2>${ podcast.name }${ media.date ? `<br /><small>${ new Date(media.date).toLocaleDateString() }</small>` : '' }</h2>
   </div>` : '' }
