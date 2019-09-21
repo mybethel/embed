@@ -5,10 +5,10 @@ module.exports = {
         '--phone': '(max-width: 43em)',
         '--tablet': '(min-width: 43em)',
         '--desktop': '(min-width: 64em)',
-        '--retina': '(min-width: 100em)',
-      },
+        '--retina': '(min-width: 100em)'
+      }
     }),
     require('postcss-discard-comments')({ removeAll: true }),
-    require('postcss-cssnext')(),
-  ],
-};
+    require('postcss-cssnext')()
+  ]
+}

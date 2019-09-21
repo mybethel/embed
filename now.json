@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "scope": "bethel",
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build" },
+    { "src": "index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/(.*\\.\\w+)", "dest": "/public/$1" },
+    { "src": "/.*", "dest": "/index.js" }
+  ]
+}
