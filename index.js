@@ -10,6 +10,7 @@ module.exports = async (req, res) => {
   try {
     const media = await api(`media/${id}`)
     const podcast = await api(`podcast/${media.podcast}`)
+    res.setHeader('Cache-Control', 'public, s-maxage=86400, max-age=0')
     send(res, 200, template({ media, podcast }))
   } catch (err) {
     console.error(err)
