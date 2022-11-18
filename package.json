@@ -37,7 +37,7 @@
     "style-loader": "^0.18.1",
     "url-loader": "^2.1.0",
     "video.js": "^5.19.2",
-    "webpack": "^2.6.1"
+    "webpack": "^5.75.0"
   },
   "babel": {
     "presets": [
